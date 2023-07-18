@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: #333;
+  color: #fff;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+/* .logos {
+  display: flex;
+}
+
+.logo:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.logo:nth-child(3) {
+  transition-delay: 400ms;
+}
+
+.logo:nth-child(3) {
+  transition-delay: 600ms;
+} */
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+.slide .content {
+  position: absolute;
+  bottom: 70px;
+  left: -600px;
+  opacity: 0;
+  width: 600px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  padding: 35px;
+}
+
+.slide .content h1 {
+  margin-bottom: 10px;
+}
+
+.slide.current .content {
+  opacity: 1;
+  transform: translateX(600px);
+  transition: all 0.7s ease-in-out 0.3s;
+}
+
+.buttons button#next {
+  position: absolute;
+  top: 40%;
+  right: 15px;
+}
+
+.buttons button#prev {
+  position: absolute;
+  top: 40%;
+  left: 15px;
+}
+
+.buttons button {
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons button:hover {
+  background-color: black;
+  color: #333;
+}
+
+@media (max-width: 500px) {
+  .slide .content {
+    bottom: -300px;
+    left: 0;
+    width: 100%;
+  }
+
+  .slide.current .content {
+    transform: translateY(-300px);
+  }
+}
+
+/* Backgorund Images */
+
+.slide:first-child {
+  background: url("https://source.unsplash.com/RyRpq9SUwAU/1600x900") no-repeat
+    center top/cover;
+}
+.slide:nth-child(2) {
+  background: url("https://source.unsplash.com/BeOW_PJjA0w/1600x900") no-repeat
+    center top/cover;
+}
+.slide:nth-child(3) {
+  background: url("image/bg6_2.jpg") no-repeat center top/cover;
+}
+.slide:nth-child(4) {
+  background: url("https://source.unsplash.com/yXpA_eCbtzI/1600x900") no-repeat
+    center top/cover;
+}
+.slide:nth-child(5) {
+  background: url("https://source.unsplash.com/ULmaQh9Gvbg/1600x900") no-repeat
+    center top/cover;
+}
+.slide:nth-child(6) {
+  background: url("https://source.unsplash.com/ggZuL3BTSJU/1600x900") no-repeat
+    center center/cover;
+}
+
+.img1 {
+  background: url("./image/jasper-garratt-cjHRI1OwKbk-unsplash.jpg") no-repeat
+    center center/cover;
+}
+.img2 {
+  background: url("./image/neom-gj7WgSOIIu4-unsplash.jpg") no-repeat center
+    center/cover;
+}
+.img3 {
+  background: url("./image/woliul-hasan-FqVDWNwA5Hk-unsplash.jpg") no-repeat
+    center center/cover;
+}
+
+.parallax {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-family: big john;
+  width: 100%;
+  height: 100vh;
+}
+h2 {
+  font-size: 60px;
+  background: #eee;
+  padding: 8px 24px;
+  border-radius: 16px;
+}
+
+#parallax {
+  background-image: url(./image/div1.jpg);
+  background-size: cover;
+}
+
+#div2 {
+  background-image: url(./image/div2.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#div3 {
+  height: 400px;
+  background-image: url(./image/div3.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#div4 {
+  background-image: url(./image/div4.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.container {
+  cursor: none;
+}
+
+.cursor {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #c6c6c6;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.btn-grow {
+  transform: scale(2);
+  background: red;
+}
